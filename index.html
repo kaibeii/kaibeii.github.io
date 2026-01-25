@@ -1,0 +1,190 @@
+<!-- used chatgpt to generate format and card sorting functionalities in script, along with css, edited to format with images and different fonts as well as content! -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kai Shaw — Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+ <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <nav class="top-nav">
+    <div class="nav-left">
+      <a href="index.html">
+      <img src="images/logo.png" alt="Kai Shaw logo" class="nav-logo">
+      </a>
+
+    </div>
+
+    <div class="nav-right">
+      <a href="https://drive.google.com/file/d/1DO_gLftRfmkMQYUR49CrdU0KrRCdGwJn/view?usp=sharing" target="_blank">resume</a>
+      <a href="https://drive.google.com/file/d/1A0pXKZa7BcgR3VO7WdkrsALMocVr-Z8c/view?usp=sharing" target="_blank">portfolio</a>
+      <a href="about me.html" target="_blank">about me</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <!-- PILL -->
+      <div class="hero-box reveal">
+        <h1>hi, i'm kai</h1>
+        <p>senior @ carnegie mellon university <br>architecture × hci × creative technology</p>
+      </div>
+
+      <!-- ABOUT -->
+      <div class="hero-about reveal">
+        <p>
+          I’m a multidisciplinary designer interested in HCI,
+          creative technology, and architecture. I explore interaction, systems, and form
+          through digital and physical mediums — from VR environments to
+          computational and spatial experimentation.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS HEADER -->
+  <section class="projects-header reveal" id="projects">
+    <h2>projects</h2>
+  </section>
+
+  <!-- FILTERS -->
+  <section class="filters reveal">
+    <button class="filter-btn active" data-filter="all">all</button>
+    <button class="filter-btn" data-filter="hci">hci</button>
+    <button class="filter-btn" data-filter="vr">vr</button>
+    <button class="filter-btn" data-filter="ai">ai</button>
+    <button class="filter-btn" data-filter="architecture">architecture</button>
+    <button class="filter-btn" data-filter="fabrication">fabrication</button>
+    <button class="filter-btn" data-filter="ui/ux">ui/ux</button>
+    <button class="filter-btn" data-filter="miscellaneous">miscellaneous</button>
+
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects reveal">
+
+    <div class="project-card" data-tags="architecture hci">
+      <div class="cover">
+        <img src="images/ecphoracover.png" alt="Ecphora cover">
+      </div>
+      <h3>Ecphora</h3>
+      <p>Computational Design Competition Pavillion.</p>
+      <div class="tags">
+        <span>architecture</span><span>hci</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-tags="hci ai">
+      <div class="cover">
+        <img src="images/wemecover.png" alt="We / Me / Meme cover">
+      </div>
+      <h3>We / Me / Meme</h3>
+      <p>Interactive video installation exploring internet collectivism.</p>
+      <div class="tags">
+        <span>hci</span><span>ai</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-tags="ui/ux hci">
+      <div class="cover">
+        <img src="images/bumblecover.png" alt="Bumble Matchmaker cover">
+      </div>
+      <h3>Bumble Matchmaker</h3>
+      <p>Reimagined new feature for Bumble.</p>
+      <div class="tags">
+        <span>ui/ux</span><span>hci</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-tags="vr hci">
+      <div class="cover">
+        <img src="images/therapycover.png" alt="VR Exposure Therapy cover">
+      </div>
+      <h3>VR Exposure Therapy</h3>
+      <p>Aquaphobia & thalassophobia therapy environment.</p>
+      <div class="tags">
+        <span>vr</span><span>hci</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-tags="ui/ux hci">
+      <div class="cover">
+        <img src="images/cm4ucover.png" alt="CM4U cover">
+      </div>
+      <h3>CM4U</h3>
+      <p>Event based mobile application targeting CMU students.</p>
+      <div class="tags">
+        <span>ui/ux</span><span>hci</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-tags="architecture fabrication">
+      <div class="cover">
+        <img src="images/roboticcover.png" alt="Robotic Clay Research cover">
+      </div>
+      <h3>Robotic Clay Research</h3>
+      <p>Material behavior explored through robotic extrusion.</p>
+      <div class="tags">
+        <span>architecture</span><span>fabrication</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-tags="ui/ux hci">
+      <div class="cover">
+        <img src="images/synclycover.png" alt="Sync.ly cover">
+      </div>
+      <h3>Sync.ly</h3>
+      <p>Spotify Discord Bot for Social Web</p>
+      <div class="tags">
+        <span>ui/ux</span><span>hci</span>
+      </div>
+    </div>
+
+    <div class="project-card" data-tags="ui/ux hci">
+      <div class="cover">
+        <img src="images/tipmascover.png" alt="Tipmas cover">
+      </div>
+      <h3>Tipmas</h3>
+      <p>LeTruc Intern Initiative.</p>
+      <div class="tags">
+        <span>ui/ux</span><span>hci</span>
+      </div>
+    </div>
+
+     <div class="project-card" data-tags="miscellaneous">
+      <div class="cover">
+        <img src="images/desolatecover.png" alt="Desolate cover">
+      </div>
+      <h3>Desolate Remnants</h3>
+      <p>2D Pixel Platformer Game.</p>
+      <div class="tags">
+        <span>miscellaneous</span>
+      </div>
+    </div>
+
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-name">kai shaw</p>
+
+    <div class="footer-links">
+      <a href="mailto:klshaw@andrew.cmu.edu">klshaw@andrew.cmu.edu</a>
+      <a href="https://www.linkedin.com/in/kai-shaw000" target="_blank" rel="noopener noreferrer">
+        linkedin
+      </a>
+    </div>
+  </div>
+</footer>
+
+</html>

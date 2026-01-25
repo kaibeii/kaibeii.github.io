@@ -1,0 +1,471 @@
+
+/*Used AI to generate CSS alongside the index.html, edited based on sizing, and timing for animations, added own fonts*/
+@font-face {
+  font-family: "OffBit DotBold";
+  src: url("fonts/OffBit-DotBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue LT";
+  src: url("fonts/HelveticaNeue LT 45 Light Regular.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* GLOBAL */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fafafa;
+  color: #111;
+  font-family: "Helvetica Neue LT", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+}
+
+/* NAV */
+.top-nav {
+  position: absolute;
+  top: 2rem;
+  left: 6rem;
+  right: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.nav-logo {
+  height: 48px; /* adjust as needed */
+  width: auto;
+  display: block;
+}
+
+.nav-right {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-right a {
+  font-family: "OffBit DotBold", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  color: #111;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 150ms ease;
+}
+
+.nav-right a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  padding: 0 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+
+.hero-box {
+  background: #0f0f0f;
+  color: white;
+  padding: 2.25rem 4.5rem;
+  border-radius: 999px;
+  min-width: clamp(320px, 60vw, 900px);
+}
+
+.hero-box h1 {
+  font-family: "OffBit DotBold", monospace;
+  font-size: clamp(3.5rem, 9vw, 7.5rem);
+
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: -0.015em;
+}
+
+.hero-box p {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+
+
+.hero-about {
+  margin-top: 2rem;
+  width: 100%;                 /* take full row */
+  display: flex;               /* center the paragraph block */
+  justify-content: center;
+  text-align: center;          /* center inline text too */
+}
+
+.hero-about p {
+  margin: 0;
+  max-width: 640px;            /* readable line length */
+  width: 100%;                 /* ensures it truly centers inside flex */
+  text-align: center;          /* belt + suspenders */
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+/* PROJECTS HEADER */
+.projects-header {
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 1.25rem;
+  padding-bottom: 0.75rem;
+}
+
+.projects-header h2 {
+  margin: 0;
+  font-family: "OffBit DotBold", monospace;
+  font-size: 2.5rem;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+  text-align: left;
+}
+
+/* FILTERS */
+.filters {
+  padding-left: 6rem;
+  padding-right: 6rem;
+  padding-top: 0.25rem;
+  padding-bottom: 1rem;
+  margin: 0;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  border: 1px solid #ccc;
+  background: transparent;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* PROJECT GRID */
+.projects {
+  padding: 2rem 6rem 6rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  gap: 1.5rem;
+}
+
+/* CARD */
+.project-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid #eee;
+  transition: opacity 220ms ease, transform 220ms ease;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.project-card h3 {
+  margin: 0 0 0.5rem;
+}
+
+.project-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+/* SQUARE COVER + B&W FILTER ON DEFAULT */
+.cover {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: #f0f0f0;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(60%) saturate(40%) contrast(90%) brightness(95%);
+  transition: filter 300ms ease;
+}
+
+.project-card:hover .cover img {
+  filter: grayscale(0%) saturate(100%) contrast(100%) brightness(100%);
+}
+
+.project-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+
+/* TAG PILLS IN CARD */
+.tags {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  font-size: 0.7rem;
+  background: #f0f0f0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+}
+
+/* FILTER ANIMATION STATES (for your crossfade JS) */
+.project-card.is-hiding {
+  opacity: 0;
+  transform: translateY(6px) scale(0.99);
+  pointer-events: none;
+}
+
+.project-card.is-showing {
+  opacity: 0;
+  transform: translateY(6px) scale(0.99);
+}
+
+.project-card.hidden {
+  display: none;
+}
+/* uniform grid fade each time you filter */
+.projects.is-filtering {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.projects {
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+
+/* RESPONSIVE HERO STACK */
+@media (max-width: 900px) {
+  .top-nav {
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .hero {
+    padding: 0 1.5rem;
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .hero-box {
+    min-width: unset;
+    padding: 2rem 2.25rem;
+  }
+
+  .hero-about {
+    max-width: 650px;
+  }
+
+  .about-header,
+  .about-content,
+  .projects-header,
+  .filters,
+  .projects {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* --- Page reveal animations --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.reveal.is-visible {
+  animation: fadeUp 700ms ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optional: slightly snappier for the pill */
+.hero-box.reveal.is-visible {
+  animation-duration: 800ms;
+}
+
+/* Optional: stagger cards when projects grid appears */
+.projects.reveal.is-visible .project-card {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 600ms ease forwards;
+}
+
+/* stagger children cards */
+.projects.reveal.is-visible .project-card:nth-child(1) { animation-delay: 80ms; }
+.projects.reveal.is-visible .project-card:nth-child(2) { animation-delay: 140ms; }
+.projects.reveal.is-visible .project-card:nth-child(3) { animation-delay: 200ms; }
+.projects.reveal.is-visible .project-card:nth-child(4) { animation-delay: 260ms; }
+.projects.reveal.is-visible .project-card:nth-child(5) { animation-delay: 320ms; }
+.projects.reveal.is-visible .project-card:nth-child(6) { animation-delay: 380ms; }
+.projects.reveal.is-visible .project-card:nth-child(7) { animation-delay: 440ms; }
+.projects.reveal.is-visible .project-card:nth-child(8) { animation-delay: 500ms; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible,
+  .projects.reveal.is-visible .project-card {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}
+
+/* FOOTER */
+.site-footer {
+  padding: 4rem 6rem 3rem;
+  border-top: 1px solid #e5e5e5;
+  margin-top: 6rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-name {
+  font-family: "OffBit DotBold", monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: #111;
+  opacity: 0.6;
+  transition: opacity 150ms ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+
+/* ABOUT PAGE */
+.about-page {
+  padding: 10rem 6rem 6rem;
+}
+
+.about-hero {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 4rem;
+  align-items: start;
+  max-width: 1100px;
+}
+
+.about-photo img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+.about-text h1 {
+  font-family: "OffBit DotBold", monospace;
+  font-size: 2.5rem;
+  letter-spacing: 0.06em;
+  margin: 0 0 1.5rem;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  opacity: 0.85;
+  margin-bottom: 1.25rem;
+  max-width: 65ch;
+}
+
+.about-links {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1.25rem;
+}
+
+.about-links a {
+  font-family: "OffBit DotBold", monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: lowercase;
+  text-decoration: none;
+  color: #111;
+  opacity: 0.6;
+  transition: opacity 150ms ease;
+}
+
+.about-links a:hover {
+  opacity: 1;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .about-page {
+    padding: 8rem 1.5rem 4rem;
+  }
+
+  .about-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-photo {
+    max-width: 280px;
+  }
+}
