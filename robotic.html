@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robotic Clay Research — Kai Shaw</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+  <!-- NAV (same as index) -->
+  <nav class="top-nav">
+    <div class="nav-left">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Kai Shaw logo" class="nav-logo">
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://drive.google.com/file/d/1DO_gLftRfmkMQYUR49CrdU0KrRCdGwJn/view?usp=sharing" target="_blank" rel="noopener noreferrer">resume</a>
+      <a href="index.html#projects">portfolio</a>
+      <a href="about me.html">about me</a>
+    </div>
+  </nav>
+
+  <!-- PAGE CONTENT (uses your existing CSS classes exactly) -->
+  <main class="project-page">
+    <header class="project-page-top">
+      <button class="back-btn" type="button">← back</button>
+
+      <h1 class="project-title">Robotic Clay Research</h1>
+
+      <p class="project-subtitle">
+        Material behavior explored through robotic extrusion ·
+        <a
+          href="https://embed.figma.com/slides/L7zmQHMhdrFcPAU366L3UH/Final-Presentation-ITAR-Clay?node-id=1-237&embed-host=share"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="project-link-inline"
+        >
+          link to presentation
+        </a>
+      </p>
+    </header>
+
+    <!-- FIGMA EMBED -->
+    <section class="figma-embed">
+      <iframe
+        title="ITAR Clay — Final Presentation"
+        style="border: 1px solid rgba(0, 0, 0, 0.1);"
+        width="100%"
+        height="720"
+        src="https://embed.figma.com/slides/L7zmQHMhdrFcPAU366L3UH/Final-Presentation-ITAR-Clay?node-id=1-237&embed-host=share"
+        allowfullscreen
+      ></iframe>
+    </section>
+
+  </main>
+
+  <script>
+    // Back button: go back if possible, otherwise go home
+    document.querySelector(".back-btn")?.addEventListener("click", () => {
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = "index.html";
+    });
+  </script>
+
+</body>
+</html>

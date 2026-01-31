@@ -160,6 +160,9 @@ body {
   border-radius: 999px;
   cursor: pointer;
   font-size: 0.85rem;
+  font-family: "Helvetica Neue LT", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em; /* subtle, optional */
 }
 
 .filter-btn.active,
@@ -467,5 +470,59 @@ body {
 
   .about-photo {
     max-width: 280px;
+  }
+}
+
+
+/* Add this to styles.css (project page embed layout) */
+.project-page {
+  padding: 10rem 6rem 6rem; /* space for nav */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-page-top {
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 999px;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.back-btn:hover {
+  opacity: 1;
+}
+
+.project-title {
+  font-family: "OffBit DotBold", monospace;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  margin: 1.5rem 0 0;
+}
+
+.project-subtitle {
+  margin-top: 0.75rem;
+  opacity: 0.75;
+  max-width: 70ch;
+}
+
+.figma-embed iframe {
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .project-page {
+    padding: 8rem 1.5rem 4rem;
+  }
+
+  .figma-embed iframe {
+    height: 560px;
   }
 }
