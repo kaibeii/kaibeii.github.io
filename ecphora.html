@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ecphora — Kai Shaw</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+  <!-- NAV (same as index) -->
+   <nav class="top-nav">
+    <div class="nav-left">
+      <a href="index.html">
+      <img src="images/logo.png" alt="Kai Shaw logo" class="nav-logo">
+      </a>
+
+    </div>
+
+    <div class="nav-right">
+      <a href="https://drive.google.com/file/d/1DO_gLftRfmkMQYUR49CrdU0KrRCdGwJn/view?usp=sharing" target="_blank">resume</a>
+      <a href="https://drive.google.com/file/d/1A0pXKZa7BcgR3VO7WdkrsALMocVr-Z8c/view?usp=sharing" target="_blank">portfolio</a>
+      <a href="about me.html" target="_blank">about me</a>
+    </div>
+  </nav>
+  <!-- PAGE CONTENT -->
+  <main class="project-page">
+    <header class="project-page-top">
+      <button class="back-btn" type="button">← back</button>
+      <h1 class="project-title">Ecphora</h1>
+     <p class="project-subtitle">
+  1st Place- SOA Computation Design Competition 2023 Winner, Pavillion Design<br> In collaboration with Catalina John-Melendez and Lisa Chun</br>
+ 
+</p>
+
+    </header>
+
+    <!-- FIGMA EMBED -->
+    <section class="figma-embed">
+      <iframe
+        title="Ecphora — Slides"
+        style="border: 1px solid rgba(0, 0, 0, 0.1);"
+        width="100%"
+        height="720"
+       <iframe src="https://drive.google.com/file/d/1AeB9kXPpvJz0ghEFuqj4--TLp_B4W2FT/preview" width="640" height="480"></iframe>
+       
+   
+    </section>
+
+
+  </main>
+
+  <script>
+    // Back button: go back if possible, otherwise go home
+    document.querySelector(".back-btn")?.addEventListener("click", () => {
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = "index.html";
+    });
+  </script>
+
+</body>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-name">kai shaw</p>
+
+    <div class="footer-links">
+      <a href="mailto:klshaw@andrew.cmu.edu">klshaw@andrew.cmu.edu</a>
+      <a href="https://www.linkedin.com/in/kai-shaw000" target="_blank" rel="noopener noreferrer">
+        linkedin
+      </a>
+    </div>
+  </div>
+</footer>
+
+</html>
