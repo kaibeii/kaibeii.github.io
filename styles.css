@@ -176,7 +176,7 @@ body {
 .projects {
   padding: 2rem 6rem 6rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: 1.5rem;
 }
 
@@ -483,6 +483,7 @@ body {
   padding: 10rem 6rem 6rem; /* space for nav */
   max-width: 1200px;
   margin: 0 auto;
+  justify-content: center;
 }
 
 .project-page-top {
@@ -512,12 +513,13 @@ body {
 .project-subtitle {
   margin-top: 0.75rem;
   opacity: 0.75;
-  max-width: 70ch;
+  max-width: 100%;
 }
 
 .figma-embed iframe {
   border-radius: 16px;
   overflow: hidden;
+  justify-content: center;
 }
 
 /* Mobile */
