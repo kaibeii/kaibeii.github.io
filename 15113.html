@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>15113 Projects — Kai Shaw</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+
+  <!-- NAV (same as index) -->
+  <nav class="top-nav">
+    <div class="nav-left">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Kai Shaw logo" class="nav-logo">
+      </a>
+    </div>
+
+    <div class="nav-right">
+      <a href="https://drive.google.com/file/d/1DO_gLftRfmkMQYUR49CrdU0KrRCdGwJn/view?usp=sharing" target="_blank" rel="noopener noreferrer">resume</a>
+      <a href="https://drive.google.com/file/d/1A0pXKZa7BcgR3VO7WdkrsALMocVr-Z8c/view?usp=sharing" target="_blank" rel="noopener noreferrer">portfolio</a>
+      <a href="about me.html" target="_blank" rel="noopener noreferrer">about me</a>
+    </div>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <main class="project-page">
+    <header class="project-page-top">
+      <button class="back-btn" type="button">← back</button>
+      <h1 class="project-title">15113 Projects</h1>
+      <p class="project-subtitle">Various projects from CMU 15-113.</p>
+    </header>
+
+    <!-- NEW SECTION: Crossy Road -->
+    <section class="project-content">
+      <h2>crossy road remake with ai in one hour</h2>
+
+      <p>
+        A quick one-hour build: a Crossy Road-style remake prototyped with the help of AI.
+        Focused on core mechanics, movement, and simple gameplay loop.
+      </p>
+
+      <p>
+        <a
+          class="project-link-inline"
+          href="https://github.com/kaibeii/crossyroad15113"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          github repo
+        </a>
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p class="footer-name">kai shaw</p>
+
+      <div class="footer-links">
+        <a href="mailto:klshaw@andrew.cmu.edu">klshaw@andrew.cmu.edu</a>
+        <a href="https://www.linkedin.com/in/kai-shaw000" target="_blank" rel="noopener noreferrer">
+          linkedin
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Back button: go back if possible, otherwise go home
+    document.querySelector(".back-btn")?.addEventListener("click", () => {
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = "index.html";
+    });
+  </script>
+
+</body>
+</html>

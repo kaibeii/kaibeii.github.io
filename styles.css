@@ -247,6 +247,10 @@ body {
 }
 
 /* FILTER ANIMATION STATES (for your crossfade JS) */
+.projects .hidden { 
+  display: none !important; 
+}
+
 .project-card.is-hiding {
   opacity: 0;
   transform: translateY(6px) scale(0.99);

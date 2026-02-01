@@ -65,34 +65,49 @@ document.addEventListener("DOMContentLoaded", () => {
     return tags.includes(filter);
   }
 
+
+
+function getGridItemFromCard(card) {
+  // If the card is wrapped in a link, the grid item is the <a>.
+  // Otherwise, the card itself is the grid item.
+  return card.closest(".project-link") || card;
+}
+
 function crossfadeTo(filterRaw) {
   const filter = (filterRaw || "all").toLowerCase();
   if (isTransitioning) return;
   isTransitioning = true;
 
-  // Fade the whole grid uniformly
   if (projectsGrid) projectsGrid.classList.add("is-filtering");
 
   window.setTimeout(() => {
-    // Apply visibility (with misc rule)
+    const matches = [];
+    const nonMatches = [];
+
     cards.forEach((card) => {
       const tags = parseTags(card.dataset.tags);
-      const matches = shouldShowCard(tags, filter);
+      const show = shouldShowCard(tags, filter);
 
-      if (!matches) {
-        card.classList.add("hidden");
-      } else {
-        card.classList.remove("hidden");
-      }
+      const item = getGridItemFromCard(card);
+      item.classList.remove("hidden"); // reset
+
+      if (show) matches.push(item);
+      else nonMatches.push(item);
     });
 
-    // Next frame: bring grid back + optionally stagger in cards
+    // Reorder DOM: matching items first (anchors + bare divs)
+    // Also hide the non-matching ITEMS (so empty anchors don't take grid slots)
+    const ordered = [...matches, ...nonMatches];
+    ordered.forEach((item) => projectsGrid.appendChild(item));
+    nonMatches.forEach((item) => item.classList.add("hidden"));
+
     requestAnimationFrame(() => {
       if (projectsGrid) projectsGrid.classList.remove("is-filtering");
       isTransitioning = false;
     });
   }, DURATION_MS);
 }
+
 
   // Top filter buttons
   filterButtons.forEach((btn) => {
