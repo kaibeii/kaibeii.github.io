@@ -27,10 +27,10 @@
   </nav>
 
   <!-- PAGE CONTENT -->
-  <main class="project-page">
+  <main class="project-page reveal">
 
     <!-- HEADER -->
-    <header class="project-page-top">
+    <header class="project-page-top reveal">
       <button class="back-btn" type="button">← back</button>
 
       <h1 class="project-title">We / Me / Meme</h1>
@@ -41,7 +41,7 @@
     </header>
 
     <!-- SLIDES EMBED -->
-    <section class="figma-embed">
+    <section class="figma-embed reveal">
       <iframe
         title="We / Me / Meme — Presentation"
         src="https://docs.google.com/presentation/d/e/2PACX-1vResNs5u59mbXAjONPcKQjqQgMHNdnCsMiTZTlC325PfXjdDQ0apQ9yZo-3huWwpXyX-nu_6WYyey01/pubembed?start=false&loop=true&delayms=5000"
@@ -56,18 +56,9 @@
 
   </main>
 
-  <!-- BACK BUTTON LOGIC -->
-  <script>
-    document.querySelector(".back-btn")?.addEventListener("click", () => {
-      if (window.history.length > 1) {
-        window.history.back();
-      } else {
-        window.location.href = "index.html";
-      }
-    });
-  </script>
+<script src="script.js"></script>
 
-</body>
+</body>gig
 
 <footer class="site-footer">
   <div class="footer-inner">

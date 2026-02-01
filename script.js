@@ -136,3 +136,18 @@ function crossfadeTo(filterRaw) {
   const initialFilter = (document.querySelector(".filter-btn.active")?.dataset.filter || "all").toLowerCase();
   crossfadeTo(initialFilter);
 });
+
+
+
+    document.querySelector(".back-btn")?.addEventListener("click", () => {
+      if (window.history.length > 1) window.history.back();
+      else window.location.href = "index.html";
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+    const revealEls = document.querySelectorAll(".reveal");
+
+    revealEls.forEach((el, i) => {
+      setTimeout(() => el.classList.add("is-visible"), 120 + i * 180);
+    });
+  });

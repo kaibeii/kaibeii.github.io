@@ -25,10 +25,10 @@
     </div>
   </nav>
   <!-- PAGE CONTENT -->
-  <main class="project-page">
-    <header class="project-page-top">
+  <main class="project-page reveal">
+    <header class="project-page-top reveal">
       <button class="back-btn" type="button">← back</button>
-      <h1 class="project-title">Ecphora</h1>
+      <h1 class="project-title ">Ecphora</h1>
      <p class="project-subtitle">
   1st Place- SOA Computation Design Competition 2023 Winner, Pavillion Design<br> In collaboration with Catalina John-Melendez and Lisa Chun</br>
  
@@ -37,7 +37,7 @@
     </header>
 
     <!-- FIGMA EMBED -->
-    <section class="figma-embed">
+    <section class="figma-embed reveal">
       <iframe
         title="Ecphora — Slides"
         style="border: 1px solid rgba(0, 0, 0, 0.1);"
@@ -51,14 +51,8 @@
 
   </main>
 
-  <script>
-    // Back button: go back if possible, otherwise go home
-    document.querySelector(".back-btn")?.addEventListener("click", () => {
-      if (window.history.length > 1) window.history.back();
-      else window.location.href = "index.html";
-    });
-  </script>
-
+ 
+  <script src="script.js"></script>
 </body>
 
 <footer class="site-footer">

@@ -26,7 +26,7 @@
   </nav>
   <!-- PAGE CONTENT -->
   <main class="project-page">
-    <header class="project-page-top">
+    <header class="project-page-top reveal">
       <button class="back-btn" type="button">← back</button>
       <h1 class="project-title">Bumble Matchmaker</h1>
      <p class="project-subtitle">
@@ -44,7 +44,7 @@
     </header>
 
     <!-- FIGMA EMBED -->
-    <section class="figma-embed">
+    <section class="figma-embed reveal">
       <iframe
         title="Bumble Matchmaker — Figma"
         style="border: 1px solid rgba(0, 0, 0, 0.1);"
@@ -56,7 +56,7 @@
     </section>
 
     <!-- PROTOTYPE EMBED -->
-<section class="figma-embed figma-prototype">
+<section class="figma-embed figma-prototype reveal">
   <h2 class="embed-heading">interactive prototype</h2>
 
   <iframe
@@ -72,14 +72,8 @@
 
   </main>
 
-  <script>
-    // Back button: go back if possible, otherwise go home
-    document.querySelector(".back-btn")?.addEventListener("click", () => {
-      if (window.history.length > 1) window.history.back();
-      else window.location.href = "index.html";
-    });
-  </script>
-
+  
+  <script src="script.js"></script>
 </body>
 
 <footer class="site-footer">
