@@ -414,7 +414,7 @@ body {
 
 .about-hero {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 420px 1fr;
   gap: 4rem;
   align-items: start;
   max-width: 1100px;
