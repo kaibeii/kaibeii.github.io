@@ -410,6 +410,7 @@ body {
 /* ABOUT PAGE */
 .about-page {
   padding: 10rem 6rem 6rem;
+  justify-content: center;
 }
 
 .about-hero {
@@ -531,5 +532,327 @@ body {
 
   .figma-embed iframe {
     height: 560px;
+  }
+}
+
+
+/* CATROLL */
+
+/* -------------------------
+   Cat Roller (API Project)
+-------------------------- */
+
+.project-divider{
+  height: 1px;
+  width: 100%;
+  background: rgba(0,0,0,0.12);
+  margin: 26px 0;
+}
+
+.cat-card{
+  margin-top: 16px;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(6px);
+}
+
+.cat-card-header{
+  padding: 18px 18px 10px;
+}
+
+.cat-card-header h3{
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.cat-sub{
+  margin: 6px 0 0;
+  opacity: 0.75;
+}
+
+.cat-viewer{
+  padding: 14px 18px 18px;
+  display: grid;
+  gap: 12px;
+}
+
+.cat-image-frame{
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(0,0,0,0.04);
+
+  /* NEW */
+  display: flex;
+  justify-content: center;
+}
+
+.cat-image-frame img{
+  width: 100%;
+  height: auto;              /* key change */
+  max-height: 520px;         /* prevents giant images */
+  object-fit: contain;       /* preserves original aspect ratio */
+  display: block;
+
+  opacity: 0;
+  transform: scale(1.01);
+  transition: opacity 240ms ease, transform 240ms ease;
+}
+
+.cat-image-frame img.is-visible{
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cat-overlay{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 160ms ease;
+  font-weight: 700;
+}
+
+.cat-overlay.is-visible{
+  opacity: 1;
+}
+
+.cat-spinner{
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: 3px solid rgba(0,0,0,0.18);
+  border-top-color: rgba(0,0,0,0.65);
+  animation: catspin 0.9s linear infinite;
+}
+
+@keyframes catspin{
+  to{ transform: rotate(360deg); }
+}
+
+.cat-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.cat-roll-btn{
+  flex: 1;
+  min-width: 240px;
+  padding: 14px 16px;
+  border: none;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 16px;
+  cursor: pointer;
+  background: #111;
+  color: #fff;
+  transition: transform 120ms ease, opacity 120ms ease;
+}
+
+.cat-roll-btn:hover{
+  transform: translateY(-1px);
+}
+
+.cat-roll-btn:disabled{
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.cat-ghost-btn{
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.18);
+  background: transparent;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.cat-history h4{
+  margin: 8px 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.cat-history-strip{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.cat-thumb{
+  position: relative;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(0,0,0,0.04);
+  aspect-ratio: 16 / 10;
+  cursor: pointer;
+}
+
+.cat-thumb.cat-thumb-empty{
+  cursor: default;
+}
+
+.cat-thumb img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cat-badge{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+.cat-note{
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.75;
+}
+
+/* Breed filter controls */
+.cat-controls{
+  display: grid;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.cat-label{
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  font-weight: 800;
+}
+
+.cat-select{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.85);
+  font-weight: 650;
+  outline: none;
+}
+
+.cat-select:disabled{
+  opacity: 0.7;
+}
+
+/* -------------------------
+   Cat Stat Card
+-------------------------- */
+.cat-stats{
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.75);
+}
+
+.cat-stats-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.65fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cat-stat{
+  display: grid;
+  gap: 4px;
+}
+
+.cat-stat-label{
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  font-weight: 800;
+}
+
+.cat-stat-value{
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.cat-stat-temper{
+  font-weight: 650;
+  opacity: 0.9;
+}
+
+/* -------------------------
+   Confetti + Zone Message
+-------------------------- */
+.cat-card{
+  position: relative; /* needed for confetti overlay positioning */
+}
+
+.cat-confetti-layer{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.cat-confetti-layer.is-on{
+  opacity: 1;
+}
+
+.cat-zone-msg{
+  position: absolute;
+  left: 50%;
+  top: 18px;
+  transform: translateX(-50%);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(17,17,17,0.92);
+  color: white;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.22);
+}
+
+/* Confetti bits */
+.cat-confetti{
+  position: absolute;
+  width: 10px;
+  height: 14px;
+  border-radius: 3px;
+  opacity: 0.95;
+  animation: catConfettiFall 950ms linear forwards;
+}
+
+@keyframes catConfettiFall{
+  from{
+    transform: translateY(-20px) rotate(0deg);
+  }
+  to{
+    transform: translateY(720px) rotate(540deg);
+    opacity: 0;
   }
 }

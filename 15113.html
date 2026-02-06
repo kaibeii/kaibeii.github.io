@@ -32,7 +32,7 @@
       <p class="project-subtitle">Various projects from CMU 15-113.</p>
     </header>
 
-    <!-- NEW SECTION: Crossy Road -->
+    <!-- SECTION: Crossy Road -->
     <section class="project-content">
       <h2>crossy road remake with ai in one hour</h2>
 
@@ -50,6 +50,87 @@
         >
           github repo
         </a>
+      </p>
+
+      <!-- NEW PROJECT: Cat Roller (API) -->
+      <div class="project-divider"></div>
+
+      <h2>roll for a new cat (the cat api)</h2>
+
+      <p>
+        A playful API mini-project: press a big button to fetch a random cat image from The Cat API.
+        Includes a loading state and a history strip showing the last three cats.
+      </p>
+
+      <section class="cat-card" aria-label="Cat roller card">
+        <header class="cat-card-header">
+          <h3>🎲 Roll for a New Cat</h3>
+          <p class="cat-sub">Press the button to summon a fresh feline.</p>
+        </header>
+
+        <div class="cat-viewer">
+          <div class="cat-image-frame" id="catImageFrame">
+            <img id="catImg" alt="A random cat will appear here." />
+            <div class="cat-overlay" id="catOverlay" aria-live="polite">
+              <div class="cat-spinner" aria-hidden="true"></div>
+              <span id="catLoadingText">Loading cat…</span>
+            </div>
+          </div>
+          
+          <!-- NEW: Stat card -->
+      <div class="cat-stats" aria-label="Cat stats">
+        <div class="cat-stats-row">
+          <div class="cat-stat">
+            <div class="cat-stat-label">Breed</div>
+            <div class="cat-stat-value" id="statBreed">—</div>
+          </div>
+
+          <div class="cat-stat">
+            <div class="cat-stat-label">Origin</div>
+            <div class="cat-stat-value" id="statOrigin">—</div>
+          </div>
+
+          <div class="cat-stat">
+            <div class="cat-stat-label">Rolls</div>
+            <div class="cat-stat-value" id="statRolls">0</div>
+          </div>
+        </div>
+
+        <div class="cat-stat">
+          <div class="cat-stat-label">Temperament</div>
+          <div class="cat-stat-value cat-stat-temper" id="statTemperament">—</div>
+        </div>
+      </div>
+
+      <!-- NEW: Confetti + message layer -->
+      <div class="cat-confetti-layer" id="catConfettiLayer" aria-hidden="true">
+        <div class="cat-zone-msg" id="catZoneMsg">you are deep in the cat zone buddy</div>
+      </div>
+            <div class="cat-controls">
+            <label class="cat-label" for="breedSelect">Breed filter</label>
+              <select id="breedSelect" class="cat-select">
+            <option value="">All breeds (random)</option>
+            </select>
+            </div>
+
+              <div class="cat-actions">
+                <button id="catRollBtn" class="cat-roll-btn" type="button">
+                  Roll for a New Cat
+                </button>
+                <button id="catResetBtn" class="cat-ghost-btn" type="button" title="Clear history">
+                  Clear history
+                </button>
+              </div>
+
+                <div class="cat-history" aria-label="Last 3 cats">
+                  <h4>Last 3 cats</h4>
+                  <div id="catHistoryStrip" class="cat-history-strip" role="list"></div>
+                </div>
+              </div>
+            </section>
+
+      <p class="cat-note">
+        Powered by The Cat API (JSON). API key is stored locally (not committed). The breed dropdown is populated by calling The Cat API /v1/breeds endpoint (JSON array of breed objects containing id and name). When a breed is selected, the app calls /v1/images/search?breed_ids=<id> to fetch an image filtered to that breed.
       </p>
     </section>
   </main>
@@ -75,6 +156,10 @@
       else window.location.href = "index.html";
     });
   </script>
+
+  <!-- The Cat API key config (DO NOT COMMIT config.js) -->
+  <script src="config.js"></script>
+  <script src="cat-roll.js"></script>
 
 </body>
 </html>
