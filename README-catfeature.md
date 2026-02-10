@@ -38,7 +38,7 @@ The Cat API allows unauthenticated requests for basic image search; however, the
 ---
 
 ## API Key Handling
-An API key is optional but supported.
+An API key is optional but supported. If you don't have an API key, it will still run but with a limited library of images. 
 
 - The key is stored locally in a `config.js` file:
   ```js
