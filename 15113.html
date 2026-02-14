@@ -132,6 +132,59 @@
       <p class="cat-note">
         Powered by The Cat API (JSON). API key is stored locally (not committed). The breed dropdown is populated by calling The Cat API /v1/breeds endpoint (JSON array of breed objects containing id and name). When a breed is selected, the app calls /v1/images/search?breed_ids=<id> to fetch an image filtered to that breed.
       </p>
+
+      <!-- NEW PROJECT: Digital Fortune Cookie -->
+<div class="project-divider"></div>
+
+<h2>digital fortune cookie (ai backend)</h2>
+
+<p>
+  A playful AI-powered fortune generator built for 15-113.
+  Enter a thought or question and receive a short, cryptic fortune.
+</p>
+
+<section class="fortune-card" aria-label="Digital fortune cookie">
+  <header class="fortune-card-header">
+    <h3>🥠 Crack a Fortune</h3>
+    <p class="fortune-sub">Ask something. The cookie answers.</p>
+  </header>
+
+  <div class="fortune-body">
+    <textarea
+      id="fortuneInput"
+      class="fortune-input"
+      placeholder="Should I send the email?"
+      maxlength="400"
+    ></textarea>
+
+    <div class="fortune-controls">
+      <select id="fortuneMood" class="fortune-select">
+        <option value="">surprise me</option>
+        <option value="hopeful">hopeful</option>
+        <option value="cryptic">cryptic</option>
+        <option value="playful">playful</option>
+        <option value="grounding">grounding</option>
+        <option value="bold">bold</option>
+      </select>
+
+      <button id="fortuneBtn" class="fortune-btn" type="button">
+        Crack cookie
+      </button>
+    </div>
+
+    <div id="fortuneError" class="fortune-error" aria-live="polite"></div>
+
+    <div id="fortuneResult" class="fortune-result" hidden>
+      <p class="fortune-text" id="fortuneText"></p>
+      <p class="fortune-suggestion" id="fortuneSuggestion"></p>
+ <div class="fortune-meta">
+  <span id="fortuneMetaLeft"></span>
+  <span id="fortuneIcon" class="fortune-icon" aria-hidden="true"></span>
+  <span id="fortuneMetaRight"></span>
+</div>
+    </div>
+  </div>
+</section>
     </section>
   </main>
 
@@ -160,6 +213,7 @@
   <!-- The Cat API key config (DO NOT COMMIT config.js) -->
   <script src="config.js"></script>
   <script src="cat-roll.js"></script>
+  <script src="fortunecookie.js"></script>
 
 </body>
 </html>
