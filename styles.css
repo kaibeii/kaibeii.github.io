@@ -968,3 +968,12 @@ body {
     transform: translateY(0) scale(1);
   }
 }
+
+.project-image {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 18px auto 0;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.12);
+}
